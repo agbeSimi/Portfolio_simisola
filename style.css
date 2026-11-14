@@ -460,33 +460,6 @@ nav {
     max-width: 900px;
 }
 
-.hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.45rem 1rem;
-    margin-bottom: 2rem;
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    border: 1px solid rgba(0, 229, 255, 0.25);
-    border-radius: 50px;
-    background: rgba(0, 229, 255, 0.05);
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #22ff88;
-    box-shadow: 0 0 10px #22ff88;
-    animation: blink 1.8s ease-in-out infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
-
 .hero h1 {
     font-family: var(--display-font);
     font-size: clamp(2.2rem, 6vw, 4.4rem);
