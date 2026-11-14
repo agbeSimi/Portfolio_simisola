@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo AS">
+  <defs>
+    <linearGradient id="as-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00e5ff"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#05050a"/>
+  <polygon points="32,4 56,18 56,46 32,60 8,46 8,18" fill="none" stroke="url(#as-grad)" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="none" stroke="url(#as-grad)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="15,44 23,20 31,44"/>
+    <line x1="18.5" y1="35" x2="27.5" y2="35"/>
+    <path d="M49,22 H38 Q34,22 34,26 V28 Q34,32 38,32 H45 Q49,32 49,36 V40 Q49,44 45,44 H34"/>
+  </g>
+</svg>
