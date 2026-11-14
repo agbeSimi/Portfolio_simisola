@@ -114,9 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const typed = document.querySelector('#typed');
     const roles = [
         'Développeur Fullstack',
-        'Symfony & API Platform',
-        'React & JavaScript',
-        'Passionné de dev web'
+        'Étudiant en BUT Informatique',
+        'Symfony & React',
+        'En recherche de stage'
     ];
 
     if (!reduceMotion) {

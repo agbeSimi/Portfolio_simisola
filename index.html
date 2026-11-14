@@ -67,9 +67,10 @@
             </button>
             <ul class="nav-links" id="nav-links">
                 <li style="--i:0"><a href="#accueil" class="active"><span class="nav-index">00</span>Accueil</a></li>
-                <li style="--i:1"><a href="#competences"><span class="nav-index">01</span>Compétences</a></li>
-                <li style="--i:2"><a href="#projets"><span class="nav-index">02</span>Projets</a></li>
-                <li style="--i:3"><a href="#contact"><span class="nav-index">03</span>Contact</a></li>
+                <li style="--i:1"><a href="#parcours"><span class="nav-index">01</span>Parcours</a></li>
+                <li style="--i:2"><a href="#competences"><span class="nav-index">02</span>Compétences</a></li>
+                <li style="--i:3"><a href="#projets"><span class="nav-index">03</span>Projets</a></li>
+                <li style="--i:4"><a href="#contact"><span class="nav-index">04</span>Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -84,24 +85,55 @@
                 <p class="hero-role mono reveal" data-delay="2">
                     <span class="prompt">$</span> <span id="typed" aria-live="polite">Développeur Fullstack</span><span class="caret" aria-hidden="true"></span>
                 </p>
-                <p class="hero-desc reveal" data-delay="3">Développeur Fullstack (Symfony / React) &amp; passionné par le développement web.</p>
+                <p class="hero-desc reveal" data-delay="3">
+                    Étudiant en 3<sup>e</sup> année de BUT Informatique à l'IUT de Reims, développeur Fullstack (Symfony / React).<br>
+                    <strong class="hero-goal">Je recherche un stage de 4 mois en développement, dès&nbsp;janvier&nbsp;2027.</strong>
+                </p>
 
                 <div class="hero-buttons reveal" data-delay="4">
                     <a href="#projets" class="btn btn-primary magnetic"><span>Voir mes projets</span></a>
                     <a href="#competences" class="btn btn-primary magnetic"><span>Voir mes compétences</span></a>
-                    <a href="CVSimisola.pdf" download="CV_AGBE_Simisola.pdf" class="btn btn-outline magnetic"><span>Télécharger mon CV ↓</span></a>
+                    <a href="CV_Simisola_AGBE.pdf" download="CV_Simisola_AGBE.pdf" class="btn btn-outline magnetic"><span>Télécharger mon CV ↓</span></a>
                 </div>
             </div>
 
-            <a href="#competences" class="scroll-indicator" aria-label="Défiler vers les compétences">
+            <a href="#parcours" class="scroll-indicator" aria-label="Défiler vers mon parcours">
                 <span class="mouse"><span class="wheel"></span></span>
                 <span class="mono">scroll</span>
             </a>
         </section>
 
-        <section id="competences" class="section skills-section">
+        <section id="parcours" class="section education-section">
             <div class="section-head reveal">
                 <span class="section-index mono">01 //</span>
+                <h2 class="glow-text">Mon Parcours</h2>
+                <span class="section-line"></span>
+            </div>
+
+            <ol class="timeline">
+                <li class="timeline-item reveal" data-delay="1">
+                    <span class="timeline-dot" aria-hidden="true"></span>
+                    <div class="timeline-card glass">
+                        <span class="timeline-date mono">Depuis 2023</span>
+                        <h3>BUT Informatique · 3<sup>e</sup> année</h3>
+                        <p class="timeline-place">IUT de Reims-Châlons-Charleville</p>
+                        <p>Parcours A : Réalisation d'applications (conception, développement, validation).</p>
+                    </div>
+                </li>
+                <li class="timeline-item reveal" data-delay="2">
+                    <span class="timeline-dot" aria-hidden="true"></span>
+                    <div class="timeline-card glass">
+                        <span class="timeline-date mono">2023</span>
+                        <h3>Baccalauréat STI2D</h3>
+                        <p class="timeline-place">Lycée Roosevelt, Reims</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="competences" class="section skills-section">
+            <div class="section-head reveal">
+                <span class="section-index mono">02 //</span>
                 <h2 class="glow-text">Mes Compétences Techniques</h2>
                 <span class="section-line"></span>
             </div>
@@ -144,7 +176,7 @@
 
         <section id="projets" class="section projects-section">
             <div class="section-head reveal">
-                <span class="section-index mono">02 //</span>
+                <span class="section-index mono">03 //</span>
                 <h2 class="glow-text">Mes Projets Récents</h2>
                 <span class="section-line"></span>
             </div>
@@ -152,33 +184,40 @@
             <div class="projects-grid">
                 <article class="project-card glass tilt reveal" data-delay="1">
                     <div class="card-shine"></div>
-                    <span class="project-num mono">P_01</span>
-                    <h3>Guide Touristique Rémois</h3>
-                    <p>Plateforme web dédiée au tourisme local (restaurants, monuments, parcours).</p>
+                    <span class="project-num mono">P_01 · Stage 2<sup>e</sup> année · 2026</span>
+                    <h3>LitterAI</h3>
+                    <p>Tuteur IA qui apprend le calcul littéral aux élèves grâce à un chatbot interactif, conçu sous l'encadrement d'un enseignant de mathématiques.</p>
                     <div class="tech-tags">
+                        <span>React</span>
+                        <span>JavaScript</span>
                         <span>PHP</span>
-                        <span>Symfony</span>
+                        <span>API Groq</span>
                     </div>
+                    <a href="https://github.com/agbeSimi/litterAI" target="_blank" rel="noopener" class="project-link">
+                        Voir le code
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a>
                 </article>
 
                 <article class="project-card glass tilt reveal" data-delay="2">
                     <div class="card-shine"></div>
                     <span class="project-num mono">P_02</span>
-                    <h3>Visualisation de Données</h3>
-                    <p>Analyse et traitement de données avec tableaux de bord interactifs.</p>
+                    <h3>Chasse au trésor interactive</h3>
+                    <p>Application web pour créer des parcours de chasse au trésor et y jouer, seul ou en équipe.</p>
                     <div class="tech-tags">
-                        <span>SQL</span>
-                        <span>PowerBI</span>
+                        <span>Symfony</span>
+                        <span>React</span>
                     </div>
                 </article>
 
                 <article class="project-card glass tilt reveal" data-delay="3">
                     <div class="card-shine"></div>
                     <span class="project-num mono">P_03</span>
-                    <h3>Générateur de Labyrinthe</h3>
-                    <p>Application logicielle de génération procédurale d'algorithmes complexes.</p>
+                    <h3>Base de données et tableau de bord</h3>
+                    <p>Conception d'une base de données, alimentation avec des données fictives et visualisation, en binôme.</p>
                     <div class="tech-tags">
-                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>Power BI</span>
                     </div>
                 </article>
             </div>
@@ -186,7 +225,7 @@
 
         <section id="contact" class="section contact-section">
             <div class="section-head reveal">
-                <span class="section-index mono">03 //</span>
+                <span class="section-index mono">04 //</span>
                 <h2 class="glow-text">Me Contacter</h2>
                 <span class="section-line"></span>
             </div>
@@ -208,8 +247,8 @@
                         <svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>
                     </div>
                     <h3>Téléphone</h3>
-                    <a href="tel:+33745365697" class="contact-value">07 45 36 56 97</a>
-                    <button class="copy-btn mono" data-copy="0745365697">Copier</button>
+                    <a href="tel:+33745395697" class="contact-value">07 45 39 56 97</a>
+                    <button class="copy-btn mono" data-copy="0745395697">Copier</button>
                 </div>
             </div>
         </section>

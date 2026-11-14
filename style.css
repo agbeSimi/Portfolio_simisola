@@ -551,6 +551,13 @@ nav {
     margin: 0 auto 2.8rem;
 }
 
+.hero-goal {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
 .hero-buttons {
     display: flex;
     gap: 1.2rem;
@@ -710,6 +717,79 @@ nav {
     color: var(--text-muted);
 }
 
+/* ---------- Parcours ---------- */
+.timeline {
+    position: relative;
+    list-style: none;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 2.4rem;
+    text-align: left;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    left: 0.55rem;
+    width: 2px;
+    background: linear-gradient(var(--accent-color), var(--accent-2), transparent);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-item + .timeline-item {
+    margin-top: 1.6rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 1.9rem;
+    left: -2.25rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-color);
+}
+
+.timeline-card {
+    padding: 1.6rem 1.8rem;
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
+}
+
+.timeline-card:hover {
+    transform: translateX(6px);
+    box-shadow: 0 12px 40px rgba(0, 229, 255, 0.12);
+}
+
+.timeline-date {
+    font-size: 0.78rem;
+    color: var(--accent-2);
+    letter-spacing: 0.12em;
+}
+
+.timeline-card h3 {
+    margin: 0.4rem 0 0.2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.timeline-place {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-card p:not(.timeline-place) {
+    color: var(--text-muted);
+}
+
 /* ---------- Compétences ---------- */
 .skills-container {
     display: grid;
@@ -845,6 +925,34 @@ nav {
     background: rgba(0, 229, 255, 0.07);
     border: 1px solid rgba(0, 229, 255, 0.22);
     border-radius: 8px;
+}
+
+.project-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    align-self: flex-start;
+    margin-top: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-decoration: none;
+    z-index: 1;
+}
+
+.project-link svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.3s var(--ease-out);
+}
+
+.project-link:hover svg {
+    transform: translate(3px, -3px);
 }
 
 /* ---------- Contact ---------- */
