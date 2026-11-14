@@ -3,133 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio Futuriste</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio d'AGBE Simisola, développeur Fullstack Symfony / React.">
+    <meta name="theme-color" content="#05050a">
+    <title>AGBE Simisola | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="circuit-bg"></div>
+<body class="is-loading">
 
-    <header>
-        <div class="logo">Mon <span class="accent">Portfolio</span></div>
-        <nav>
-            <div class="menu-toggle" id="mobile-menu">
+    <!-- Écran de chargement -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <svg class="loader-logo" viewBox="0 0 64 64">
+            <defs>
+                <linearGradient id="loader-grad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#00e5ff"/>
+                    <stop offset="1" stop-color="#8b5cf6"/>
+                </linearGradient>
+            </defs>
+            <polygon class="draw" points="32,4 56,18 56,46 32,60 8,46 8,18" fill="none" stroke="url(#loader-grad)" stroke-width="2" stroke-linejoin="round"/>
+            <g fill="none" stroke="url(#loader-grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline class="draw draw-2" points="15,44 23,20 31,44"/>
+                <line class="draw draw-2" x1="18.5" y1="35" x2="27.5" y2="35"/>
+                <path class="draw draw-3" d="M49,22 H38 Q34,22 34,26 V28 Q34,32 38,32 H45 Q49,32 49,36 V40 Q49,44 45,44 H34"/>
+            </g>
+        </svg>
+        <div class="loader-bar"><span></span></div>
+        <p class="loader-text mono">Initialisation du système<span class="dots"></span></p>
+    </div>
+
+    <!-- Arrière-plans -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="circuit-bg" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header id="header">
+        <a href="#accueil" class="logo" aria-label="Retour à l'accueil">
+            <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+                <defs>
+                    <linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#00e5ff"/>
+                        <stop offset="1" stop-color="#8b5cf6"/>
+                    </linearGradient>
+                </defs>
+                <polygon class="logo-hex" points="32,4 56,18 56,46 32,60 8,46 8,18" fill="none" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linejoin="round"/>
+                <g fill="none" stroke="url(#logo-grad)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15,44 23,20 31,44"/>
+                    <line x1="18.5" y1="35" x2="27.5" y2="35"/>
+                    <path d="M49,22 H38 Q34,22 34,26 V28 Q34,32 38,32 H45 Q49,32 49,36 V40 Q49,44 45,44 H34"/>
+                </g>
+            </svg>
+            <span class="logo-text">AGBE<span class="accent">.dev</span></span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li style="--i:0"><a href="#accueil" class="active"><span class="nav-index">00</span>Accueil</a></li>
+                <li style="--i:1"><a href="#competences"><span class="nav-index">01</span>Compétences</a></li>
+                <li style="--i:2"><a href="#projets"><span class="nav-index">02</span>Projets</a></li>
+                <li style="--i:3"><a href="#contact"><span class="nav-index">03</span>Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h1 class="glow-text">Bonjour, je suis <span class="highlight">AGBE Simisola</span></h1>
-            <p>Développeur Fullstack (Symfony / React) & passionné par la dev web.</p>
-            
-            <div class="hero-buttons">
-                <a href="#projets" class="btn btn-primary">Voir mes projets</a>
-                <a href="#competences" class="btn btn-primary">Voir mes compétences</a>
-                <a href="cv-agbesimi.pdf" download="CV_Agbesimi" class="btn btn-outline">Télécharger mon CV</a>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <p class="hero-tag mono reveal"><span class="status-dot"></span>&gt; hello_world.init()</p>
+                <h1 class="reveal" data-delay="1">
+                    Bonjour, je suis
+                    <span class="glitch" data-text="AGBE Simisola">AGBE Simisola</span>
+                </h1>
+                <p class="hero-role mono reveal" data-delay="2">
+                    <span class="prompt">$</span> <span id="typed" aria-live="polite">Développeur Fullstack</span><span class="caret" aria-hidden="true"></span>
+                </p>
+                <p class="hero-desc reveal" data-delay="3">Développeur Fullstack (Symfony / React) &amp; passionné par le développement web.</p>
 
-    <section id="competences" class="skills-section">
-        <h2 class="glow-text">Mes Compétences Techniques</h2>
-        <div class="skills-container glass">
-            <div class="skill-category">
-                <h3>Front-end</h3>
-                <div class="skills-grid">
-                    <img src="logos/html.png" alt="HTML" title="HTML">
-                    <img src="logos/css.png" alt="CSS" title="CSS">
-                    <img src="logos/js.png" alt="JavaScript" title="JavaScript">
-                    <img src="logos/react.png" alt="React" title="React">
+                <div class="hero-buttons reveal" data-delay="4">
+                    <a href="#projets" class="btn btn-primary magnetic"><span>Voir mes projets</span></a>
+                    <a href="#competences" class="btn btn-primary magnetic"><span>Voir mes compétences</span></a>
+                    <a href="CVSimisola.pdf" download="CV_AGBE_Simisola.pdf" class="btn btn-outline magnetic"><span>Télécharger mon CV ↓</span></a>
                 </div>
             </div>
 
-            <div class="skill-category">
-                <h3>Back-end & API</h3>
-                <div class="skills-grid">
-                    <img src="logos/PHP-log.png" alt="PHP" title="PHP">
-                    <img src="logos/symfony-logo.jpg" alt="Symfony" title="Symfony">
-                    <img src="logos/api.png" alt="API Platform" title="API Platform">
-                    <img src="logos/python.png" alt="Python" title="Python">
-                    <img src="logos/csharp.png" alt="C#" title="C#">
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>BDD & Outils</h3>
-                <div class="skills-grid">
-                    <img src="logos/sql.png" alt="SQL" title="SQL">
-                    <img src="logos/git.png" alt="Git" title="Git">
-                    <img src="logos/docker.png" alt="Docker" title="Docker">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projets" class="projects-section">
-        <h2 class="glow-text">Mes Projets Récents</h2>
-        <div class="projects-grid">
-            
-            <div class="project-card glass">
-                <h3>Guide Touristique Rémois</h3>
-                <p>Plateforme web dédiée au tourisme local (restaurants, monuments, parcours).</p>
-                <div class="tech-tags">
-                    <span>PHP</span>
-                    <span>Symfony</span>
-                </div>
-            </div>
-
-            <div class="project-card glass">
-                <h3>Visualisation de Données</h3>
-                <p>Analyse et traitement de données avec tableaux de bord interactifs.</p>
-                <div class="tech-tags">
-                    <span>SQL</span>
-                    <span>PowerBI</span>
-                </div>
-            </div>
-
-            <div class="project-card glass">
-                <h3>Générateur de Labyrinthe</h3>
-                <p>Application logicielle de génération procédurale d'algorithmes complexes.</p>
-                <div class="tech-tags">
-                    <span>Python</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <h2 class="glow-text">Me Contacter</h2>
-        <p>Un projet en tête ? Contactez-moi !</p>
-        
-        <div class="contact-container">
-            <a href="mailto:agbesimi10@gmail.com" class="contact-card glass">
-                <div class="contact-icon">✉️</div>
-                <h3>Email</h3>
-                <p>agbesimi10@gmail.com</p>
+            <a href="#competences" class="scroll-indicator" aria-label="Défiler vers les compétences">
+                <span class="mouse"><span class="wheel"></span></span>
+                <span class="mono">scroll</span>
             </a>
-            <a href="tel:+33745365697" class="contact-card glass">
-                <div class="contact-icon">📞</div>
-                <h3>Téléphone</h3>
-                <p>07 45 36 56 97</p>
-            </a>
-        </div>
-    </section>
+        </section>
+
+        <section id="competences" class="section skills-section">
+            <div class="section-head reveal">
+                <span class="section-index mono">01 //</span>
+                <h2 class="glow-text">Mes Compétences Techniques</h2>
+                <span class="section-line"></span>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-category glass tilt reveal" data-delay="1">
+                    <div class="card-shine"></div>
+                    <h3><span class="cat-icon">&lt;/&gt;</span>Front-end</h3>
+                    <div class="skills-grid">
+                        <figure class="skill"><img src="logos/html.png" alt="HTML"><figcaption>HTML</figcaption></figure>
+                        <figure class="skill"><img src="logos/css.png" alt="CSS"><figcaption>CSS</figcaption></figure>
+                        <figure class="skill"><img src="logos/js.png" alt="JavaScript"><figcaption>JavaScript</figcaption></figure>
+                        <figure class="skill"><img src="logos/react.png" alt="React"><figcaption>React</figcaption></figure>
+                    </div>
+                </div>
+
+                <div class="skill-category glass tilt reveal" data-delay="2">
+                    <div class="card-shine"></div>
+                    <h3><span class="cat-icon">{ }</span>Back-end &amp; API</h3>
+                    <div class="skills-grid">
+                        <figure class="skill"><img src="logos/PHP-log.png" alt="PHP"><figcaption>PHP</figcaption></figure>
+                        <figure class="skill"><img src="logos/symfony-logo.jpg" alt="Symfony"><figcaption>Symfony</figcaption></figure>
+                        <figure class="skill"><img src="logos/api.png" alt="API Platform"><figcaption>API Platform</figcaption></figure>
+                        <figure class="skill"><img src="logos/python.png" alt="Python"><figcaption>Python</figcaption></figure>
+                        <figure class="skill"><img src="logos/csharp.png" alt="C#"><figcaption>C#</figcaption></figure>
+                    </div>
+                </div>
+
+                <div class="skill-category glass tilt reveal" data-delay="3">
+                    <div class="card-shine"></div>
+                    <h3><span class="cat-icon">⌘</span>BDD &amp; Outils</h3>
+                    <div class="skills-grid">
+                        <figure class="skill"><img src="logos/sql.png" alt="SQL"><figcaption>SQL</figcaption></figure>
+                        <figure class="skill"><img src="logos/git.png" alt="Git"><figcaption>Git</figcaption></figure>
+                        <figure class="skill"><img src="logos/docker.png" alt="Docker"><figcaption>Docker</figcaption></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets" class="section projects-section">
+            <div class="section-head reveal">
+                <span class="section-index mono">02 //</span>
+                <h2 class="glow-text">Mes Projets Récents</h2>
+                <span class="section-line"></span>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card glass tilt reveal" data-delay="1">
+                    <div class="card-shine"></div>
+                    <span class="project-num mono">P_01</span>
+                    <h3>Guide Touristique Rémois</h3>
+                    <p>Plateforme web dédiée au tourisme local (restaurants, monuments, parcours).</p>
+                    <div class="tech-tags">
+                        <span>PHP</span>
+                        <span>Symfony</span>
+                    </div>
+                </article>
+
+                <article class="project-card glass tilt reveal" data-delay="2">
+                    <div class="card-shine"></div>
+                    <span class="project-num mono">P_02</span>
+                    <h3>Visualisation de Données</h3>
+                    <p>Analyse et traitement de données avec tableaux de bord interactifs.</p>
+                    <div class="tech-tags">
+                        <span>SQL</span>
+                        <span>PowerBI</span>
+                    </div>
+                </article>
+
+                <article class="project-card glass tilt reveal" data-delay="3">
+                    <div class="card-shine"></div>
+                    <span class="project-num mono">P_03</span>
+                    <h3>Générateur de Labyrinthe</h3>
+                    <p>Application logicielle de génération procédurale d'algorithmes complexes.</p>
+                    <div class="tech-tags">
+                        <span>Python</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="section-head reveal">
+                <span class="section-index mono">03 //</span>
+                <h2 class="glow-text">Me Contacter</h2>
+                <span class="section-line"></span>
+            </div>
+            <p class="section-sub reveal">Un projet en tête ? Contactez-moi !</p>
+
+            <div class="contact-container">
+                <div class="contact-card glass tilt reveal" data-delay="1">
+                    <div class="card-shine"></div>
+                    <div class="contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg>
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:agbesimi10@gmail.com" class="contact-value">agbesimi10@gmail.com</a>
+                    <button class="copy-btn mono" data-copy="agbesimi10@gmail.com">Copier</button>
+                </div>
+                <div class="contact-card glass tilt reveal" data-delay="2">
+                    <div class="card-shine"></div>
+                    <div class="contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>
+                    </div>
+                    <h3>Téléphone</h3>
+                    <a href="tel:+33745365697" class="contact-value">07 45 36 56 97</a>
+                    <button class="copy-btn mono" data-copy="0745365697">Copier</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
+        <img src="logo.svg" alt="" class="footer-logo" width="36" height="36">
         <p>&copy; 2026 AGBE Simisola. Tous droits réservés.</p>
     </footer>
-    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <a href="#accueil" class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+
+    <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>
