@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body class="is-loading">
 
@@ -96,11 +96,6 @@
                     <a href="CV_Simisola_AGBE.pdf" download="CV_Simisola_AGBE.pdf" class="btn btn-outline magnetic"><span>Télécharger mon CV ↓</span></a>
                 </div>
             </div>
-
-            <a href="#parcours" class="scroll-indicator" aria-label="Défiler vers mon parcours">
-                <span class="mouse"><span class="wheel"></span></span>
-                <span class="mono">scroll</span>
-            </a>
         </section>
 
         <section id="parcours" class="section education-section">
@@ -110,25 +105,23 @@
                 <span class="section-line"></span>
             </div>
 
-            <ol class="timeline">
+            <ul class="timeline">
                 <li class="timeline-item reveal" data-delay="1">
-                    <span class="timeline-dot" aria-hidden="true"></span>
-                    <div class="timeline-card glass">
-                        <span class="timeline-date mono">Depuis 2023</span>
+                    <span class="timeline-date mono">2023 — auj.</span>
+                    <div class="timeline-body">
                         <h3>BUT Informatique · 3<sup>e</sup> année</h3>
                         <p class="timeline-place">IUT de Reims-Châlons-Charleville</p>
-                        <p>Parcours A : Réalisation d'applications (conception, développement, validation).</p>
+                        <p class="timeline-desc">Parcours A : Réalisation d'applications (conception, développement, validation).</p>
                     </div>
                 </li>
                 <li class="timeline-item reveal" data-delay="2">
-                    <span class="timeline-dot" aria-hidden="true"></span>
-                    <div class="timeline-card glass">
-                        <span class="timeline-date mono">2023</span>
+                    <span class="timeline-date mono">2023</span>
+                    <div class="timeline-body">
                         <h3>Baccalauréat STI2D</h3>
                         <p class="timeline-place">Lycée Roosevelt, Reims</p>
                     </div>
                 </li>
-            </ol>
+            </ul>
         </section>
 
         <section id="competences" class="section skills-section">
@@ -182,42 +175,41 @@
             </div>
 
             <div class="projects-grid">
-                <article class="project-card glass tilt reveal" data-delay="1">
-                    <div class="card-shine"></div>
-                    <span class="project-num mono">P_01 · Stage 2<sup>e</sup> année · 2026</span>
+                <article class="project-card reveal" data-delay="1">
+                    <span class="project-meta mono">Stage · 2026</span>
                     <h3>LitterAI</h3>
-                    <p>Tuteur IA qui apprend le calcul littéral aux élèves grâce à un chatbot interactif, conçu sous l'encadrement d'un enseignant de mathématiques.</p>
-                    <div class="tech-tags">
-                        <span>React</span>
-                        <span>JavaScript</span>
-                        <span>PHP</span>
-                        <span>API Groq</span>
+                    <p>Tuteur IA qui apprend le calcul littéral aux élèves grâce à un chatbot interactif.</p>
+                    <div class="project-footer">
+                        <div class="tech-tags">
+                            <span>React</span>
+                            <span>PHP</span>
+                            <span>API Groq</span>
+                        </div>
+                        <a href="https://github.com/agbeSimi/litterAI" target="_blank" rel="noopener" class="project-link" aria-label="Voir le code de LitterAI sur GitHub">Code ↗</a>
                     </div>
-                    <a href="https://github.com/agbeSimi/litterAI" target="_blank" rel="noopener" class="project-link">
-                        Voir le code
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                    </a>
                 </article>
 
-                <article class="project-card glass tilt reveal" data-delay="2">
-                    <div class="card-shine"></div>
-                    <span class="project-num mono">P_02</span>
+                <article class="project-card reveal" data-delay="2">
+                    <span class="project-meta mono">Projet IUT</span>
                     <h3>Chasse au trésor interactive</h3>
                     <p>Application web pour créer des parcours de chasse au trésor et y jouer, seul ou en équipe.</p>
-                    <div class="tech-tags">
-                        <span>Symfony</span>
-                        <span>React</span>
+                    <div class="project-footer">
+                        <div class="tech-tags">
+                            <span>Symfony</span>
+                            <span>React</span>
+                        </div>
                     </div>
                 </article>
 
-                <article class="project-card glass tilt reveal" data-delay="3">
-                    <div class="card-shine"></div>
-                    <span class="project-num mono">P_03</span>
-                    <h3>Base de données et tableau de bord</h3>
-                    <p>Conception d'une base de données, alimentation avec des données fictives et visualisation, en binôme.</p>
-                    <div class="tech-tags">
-                        <span>SQL</span>
-                        <span>Power BI</span>
+                <article class="project-card reveal" data-delay="3">
+                    <span class="project-meta mono">Projet IUT · binôme</span>
+                    <h3>Base de données &amp; tableau de bord</h3>
+                    <p>Conception d'une base de données, alimentation avec des données fictives et visualisation.</p>
+                    <div class="project-footer">
+                        <div class="tech-tags">
+                            <span>SQL</span>
+                            <span>Power BI</span>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -265,6 +257,6 @@
 
     <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
