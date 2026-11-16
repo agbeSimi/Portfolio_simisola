@@ -572,6 +572,40 @@ a {
     color: var(--ink-soft);
 }
 
+/* Les disques glissent sur la barre quand l'étape arrive à l'écran */
+@media (prefers-reduced-motion: no-preference) {
+    .js .plate {
+        opacity: 0;
+        transition: transform 0.45s cubic-bezier(0.3, 1.2, 0.5, 1), opacity 0.15s linear;
+        transition-delay: calc(var(--row-delay, 0s) + var(--plate-delay, 0s));
+    }
+
+    .js .plate-left {
+        transform: translateX(-24px);
+    }
+
+    .js .plate-right {
+        transform: translateX(24px);
+    }
+
+    .js .lift + .lift {
+        --row-delay: 0.25s;
+    }
+
+    .js .plate.is-second {
+        --plate-delay: 0.16s;
+    }
+
+    .js .plate.is-third {
+        --plate-delay: 0.32s;
+    }
+
+    .js .lift.is-inview .plate {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 @media (max-width: 800px) {
     .lift {
         grid-template-columns: 1fr 8.5rem;

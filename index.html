@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=4">
+    <!-- Signale au CSS que JavaScript est actif : les animations d'entrée en dépendent -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -132,8 +134,8 @@
                         <rect x="6" y="26" width="188" height="4"/>
                         <rect x="60" y="21" width="4" height="14"/>
                         <rect x="136" y="21" width="4" height="14"/>
-                        <rect class="plate-red" x="50" y="4" width="9" height="48" rx="1.5"/>
-                        <rect class="plate-red" x="141" y="4" width="9" height="48" rx="1.5"/>
+                        <rect class="plate plate-left plate-red" x="50" y="4" width="9" height="48" rx="1.5"/>
+                        <rect class="plate plate-right plate-red" x="141" y="4" width="9" height="48" rx="1.5"/>
                     </svg>
                     <div class="lift-body">
                         <h3>Baccalauréat STI2D</h3>
@@ -146,12 +148,12 @@
                         <rect x="6" y="26" width="188" height="4"/>
                         <rect x="60" y="21" width="4" height="14"/>
                         <rect x="136" y="21" width="4" height="14"/>
-                        <rect class="plate-red" x="50" y="4" width="9" height="48" rx="1.5"/>
-                        <rect class="plate-red" x="141" y="4" width="9" height="48" rx="1.5"/>
-                        <rect x="39" y="8" width="9" height="40" rx="1.5"/>
-                        <rect x="152" y="8" width="9" height="40" rx="1.5"/>
-                        <rect x="28" y="13" width="9" height="30" rx="1.5"/>
-                        <rect x="163" y="13" width="9" height="30" rx="1.5"/>
+                        <rect class="plate plate-left plate-red" x="50" y="4" width="9" height="48" rx="1.5"/>
+                        <rect class="plate plate-right plate-red" x="141" y="4" width="9" height="48" rx="1.5"/>
+                        <rect class="plate plate-left is-second" x="39" y="8" width="9" height="40" rx="1.5"/>
+                        <rect class="plate plate-right is-second" x="152" y="8" width="9" height="40" rx="1.5"/>
+                        <rect class="plate plate-left is-third" x="28" y="13" width="9" height="30" rx="1.5"/>
+                        <rect class="plate plate-right is-third" x="163" y="13" width="9" height="30" rx="1.5"/>
                     </svg>
                     <div class="lift-body">
                         <h3>BUT Informatique · 3<sup>e</sup> année</h3>

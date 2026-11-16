@@ -46,6 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => sectionObserver.observe(section));
 
+    /* ---------- Animations jouées une fois, quand l'élément arrive à l'écran ---------- */
+    const inViewObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-inview');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.lift').forEach(element => inViewObserver.observe(element));
+
     /* ---------- Gants : un petit balancement quand on les touche ---------- */
     const gloves = document.querySelector('.gloves');
 
