@@ -100,7 +100,6 @@ a { color: inherit; }
 
 .glass:hover::before { opacity: 1; }
 
-
 /* ---------- En-tête ---------- */
 header {
     position: fixed;
@@ -149,23 +148,6 @@ header.scrolled::before {
 .logo-mark {
     width: 42px;
     height: 42px;
-    filter: drop-shadow(0 0 8px var(--accent-glow));
-    transition: transform 0.6s var(--ease-out), filter 0.3s ease;
-}
-
-.logo:hover .logo-mark {
-    transform: rotate(360deg) scale(1.08);
-    filter: drop-shadow(0 0 14px var(--accent-color));
-}
-
-.logo-hex {
-    stroke-dasharray: 160;
-    animation: hexPulse 4s ease-in-out infinite;
-}
-
-@keyframes hexPulse {
-    0%, 100% { stroke-dashoffset: 0; }
-    50% { stroke-dashoffset: 30; }
 }
 
 .logo-text {
