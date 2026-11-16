@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gabarit de l'image d'aperçu (1200 × 630)</title>
+    <!-- Servir la racine du dépôt et capturer cette page à 1200 × 630 pour produire apercu.png.
+         Voir references/systeme-design.md, « Refaire apercu.png ». -->
+    <style>
+        @font-face {
+            font-family: "League Gothic";
+            src: url("/fonts/league-gothic-latin-400.woff2") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Libre Franklin";
+            src: url("/fonts/libre-franklin-latin-wght.woff2") format("woff2");
+            font-weight: 100 900;
+        }
+
+        html, body {
+            margin: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 1200px;
+            height: 630px;
+            padding: 56px 72px;
+            background: #ffd500;
+            color: #141310;
+            font-family: "Libre Franklin", sans-serif;
+        }
+
+        .who {
+            margin: 0;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 1.35;
+        }
+
+        .who sup {
+            font-size: 0.6em;
+            line-height: 0;
+        }
+
+        /* 280.5px = (1200 - 2 × 72) / 3.765, la même mesure que --fit-name dans style.css */
+        .name {
+            margin: 0 0 0 -0.015em;
+            font: 400 280.5px/0.82 "League Gothic";
+            white-space: nowrap;
+        }
+
+        .ask {
+            margin: 0;
+            font: 400 84px/1.2 "League Gothic";
+        }
+
+        .ask span {
+            padding: 0.04em 0.2em 0.02em;
+            background: #141310;
+            color: #ffd500;
+        }
+    </style>
+</head>
+<body>
+    <p class="who">Étudiant en 3<sup>e</sup> année de BUT Informatique à l’IUT de Reims, développeur fullstack (Symfony / React).</p>
+    <h1 class="name">AGBE Simisola</h1>
+    <p class="ask"><span>Je recherche un stage, dès janvier 2027.</span></p>
+</body>
+</html>
