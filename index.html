@@ -139,40 +139,104 @@
             </ol>
         </section>
 
-        <section id="competences" class="section skills-section">
+        <section id="competences" class="section">
             <header class="section-head">
-                <h2>Mes Compétences Techniques</h2>
+                <p class="kicker">Compétences</p>
+                <h2>Composition d'équipe</h2>
+                <p class="lead">Mes technologies, alignées en 3-4-3.</p>
             </header>
 
-            <div class="skills-container">
-                <div class="skill-category glass">
-                    <h3><span class="cat-icon">&lt;/&gt;</span>Front-end</h3>
-                    <div class="skills-grid">
-                        <figure class="skill"><img src="logos/html.png" alt="HTML"><figcaption>HTML</figcaption></figure>
-                        <figure class="skill"><img src="logos/css.png" alt="CSS"><figcaption>CSS</figcaption></figure>
-                        <figure class="skill"><img src="logos/js.png" alt="JavaScript"><figcaption>JavaScript</figcaption></figure>
-                        <figure class="skill"><img src="logos/react.png" alt="React"><figcaption>React</figcaption></figure>
+            <div class="squad">
+                <!-- Le terrain est décoratif : la feuille de match porte le contenu -->
+                <div class="pitch" aria-hidden="true">
+                    <svg class="pitch-lines" viewBox="0 0 700 900">
+                        <rect x="20" y="20" width="660" height="860"/>
+                        <line x1="20" y1="450" x2="680" y2="450"/>
+                        <circle cx="350" cy="450" r="85"/>
+                        <rect x="175" y="20" width="350" height="140"/>
+                        <rect x="265" y="20" width="170" height="55"/>
+                        <path d="M290 160a85 85 0 0 0 120 0"/>
+                        <rect x="175" y="740" width="350" height="140"/>
+                        <rect x="265" y="825" width="170" height="55"/>
+                        <path d="M290 740a85 85 0 0 1 120 0"/>
+                    </svg>
+
+                    <div class="pitch-rows">
+                        <ul class="pitch-row">
+                            <li class="player">
+                                <span class="player-disc is-double"><img src="logos/html.png" alt=""><img src="logos/css.png" alt=""></span>
+                                <span class="player-name">HTML / CSS</span>
+                            </li>
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/js.png" alt=""></span>
+                                <span class="player-name">JavaScript</span>
+                            </li>
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/react.png" alt=""></span>
+                                <span class="player-name">React</span>
+                            </li>
+                        </ul>
+                        <ul class="pitch-row">
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/PHP-log.png" alt=""></span>
+                                <span class="player-name">PHP</span>
+                            </li>
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/symfony-logo.jpg" alt=""></span>
+                                <span class="player-name">Symfony</span>
+                            </li>
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/api.png" alt=""></span>
+                                <span class="player-name">API Platform</span>
+                            </li>
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/csharp.png" alt=""></span>
+                                <span class="player-name">C#</span>
+                            </li>
+                        </ul>
+                        <ul class="pitch-row">
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/sql.png" alt=""></span>
+                                <span class="player-name">SQL</span>
+                            </li>
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/python.png" alt=""></span>
+                                <span class="player-name">Python</span>
+                            </li>
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/docker.png" alt=""></span>
+                                <span class="player-name">Docker</span>
+                            </li>
+                        </ul>
+                        <ul class="pitch-row">
+                            <li class="player">
+                                <span class="player-disc"><img src="logos/git.png" alt=""></span>
+                                <span class="player-name">Git</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="skill-category glass">
-                    <h3><span class="cat-icon">{ }</span>Back-end &amp; API</h3>
-                    <div class="skills-grid">
-                        <figure class="skill"><img src="logos/PHP-log.png" alt="PHP"><figcaption>PHP</figcaption></figure>
-                        <figure class="skill"><img src="logos/symfony-logo.jpg" alt="Symfony"><figcaption>Symfony</figcaption></figure>
-                        <figure class="skill"><img src="logos/api.png" alt="API Platform"><figcaption>API Platform</figcaption></figure>
-                        <figure class="skill"><img src="logos/python.png" alt="Python"><figcaption>Python</figcaption></figure>
-                        <figure class="skill"><img src="logos/csharp.png" alt="C#"><figcaption>C#</figcaption></figure>
-                    </div>
-                </div>
-
-                <div class="skill-category glass">
-                    <h3><span class="cat-icon">⌘</span>BDD &amp; Outils</h3>
-                    <div class="skills-grid">
-                        <figure class="skill"><img src="logos/sql.png" alt="SQL"><figcaption>SQL</figcaption></figure>
-                        <figure class="skill"><img src="logos/git.png" alt="Git"><figcaption>Git</figcaption></figure>
-                        <figure class="skill"><img src="logos/docker.png" alt="Docker"><figcaption>Docker</figcaption></figure>
-                    </div>
+                <div class="teamsheet">
+                    <p class="teamsheet-title">Feuille de match</p>
+                    <dl>
+                        <div class="teamsheet-line">
+                            <dt>Attaque <span>Front-end</span></dt>
+                            <dd>HTML / CSS, JavaScript, React</dd>
+                        </div>
+                        <div class="teamsheet-line">
+                            <dt>Milieu <span>Back-end &amp; API</span></dt>
+                            <dd>PHP, Symfony, API Platform, C#</dd>
+                        </div>
+                        <div class="teamsheet-line">
+                            <dt>Défense <span>Données &amp; outils</span></dt>
+                            <dd>SQL, Python, Docker</dd>
+                        </div>
+                        <div class="teamsheet-line">
+                            <dt>Gardien <span>Gestion de versions</span></dt>
+                            <dd>Git</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </section>

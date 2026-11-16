@@ -3,6 +3,8 @@
     --ink: #17140f;
     --ink-soft: #5b5447;
     --red: #c8201c;
+    --pitch: #2f7d4a;
+    --pitch-dark: #2a7143;
     --rule: rgba(23, 20, 15, 0.2);
     --font-display: 'Anton', 'Arial Narrow', Impact, sans-serif;
     --font-label: 'Barlow Condensed', 'Arial Narrow', sans-serif;
@@ -443,86 +445,150 @@ a {
     }
 }
 
-/* ---------- Compétences ---------- */
-.skills-container {
+/* ---------- Compétences : composition d'équipe ---------- */
+.squad {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 1.8rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: minmax(0, 30rem) 1fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
 }
 
-.skill-category {
-    padding: 2.2rem 1.8rem;
+.pitch {
+    position: relative;
+    aspect-ratio: 7 / 9;
+    border: 2px solid var(--ink);
+    /* Bandes de tonte */
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--pitch) 0 11.111%,
+        var(--pitch-dark) 11.111% 22.222%
+    );
 }
 
-.skill-category h3 {
+.pitch-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.75);
+    stroke-width: 4;
+}
+
+.pitch-rows {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 0.8fr;
+    padding: 6% 3% 3%;
+}
+
+.pitch-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.7rem;
-    margin-bottom: 2rem;
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    color: var(--ink);
+    justify-content: space-evenly;
+    list-style: none;
 }
 
-.cat-icon {
-    display: inline-grid;
-    place-items: center;
-    min-width: 36px;
-    height: 36px;
-    padding: 0 0.4rem;
-    font-family: var(--font-label);
-    font-size: 0.85rem;
-    color: var(--red);
-    border: 1px solid rgba(23, 20, 15, 0.3);
-    border-radius: 10px;
-    background: rgba(23, 20, 15, 0.06);
-}
-
-.skills-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    transform: translateZ(30px);
-}
-
-.skill {
+.player {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.55rem;
-    width: 78px;
+    gap: 0.35rem;
 }
 
-.skill img {
-    width: 62px;
-    height: 62px;
-    padding: 10px;
+.player-disc {
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    background-color: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+}
+
+.player-disc img {
+    width: 2.1rem;
+    height: 2.1rem;
     object-fit: contain;
-    border-radius: 14px;
-    background: rgba(23, 20, 15, 0.04);
-    border: 1px solid rgba(23, 20, 15, 0.06);
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.skill figcaption {
-    font-size: 0.75rem;
-    color: var(--ink-soft);
-    transition: color 0.3s ease;
+.player-disc.is-double {
+    gap: 0.3rem;
+    width: auto;
+    padding: 0 0.7rem;
+    border-radius: 2rem;
 }
 
-.skill:hover img {
-    transform: translateY(-6px) scale(1.08);
-    border-color: rgba(23, 20, 15, 0.5);
-    box-shadow: 0 8px 24px rgba(23, 20, 15, 0.3);
+.player-name {
+    padding: 0.05rem 0.4rem;
+    font-family: var(--font-label);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--paper);
+    background-color: var(--ink);
 }
 
-.skill:hover figcaption { color: var(--red); }
+.teamsheet-title {
+    padding-bottom: 0.6rem;
+    font-family: var(--font-label);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+}
+
+.teamsheet-line {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.teamsheet dt {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.8rem;
+    font-family: var(--font-label);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.teamsheet dt span {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: var(--red);
+}
+
+.teamsheet dd {
+    margin-top: 0.2rem;
+    font-size: 1.15rem;
+}
+
+@media (max-width: 800px) {
+    .squad {
+        grid-template-columns: 1fr;
+    }
+
+    .player-disc {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .player-disc img {
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
+    .player-name {
+        font-size: 0.78rem;
+    }
+}
 
 /* ---------- Projets ---------- */
 .projects-grid {
