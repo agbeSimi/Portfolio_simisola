@@ -369,11 +369,11 @@ a {
 }
 
 .section-head h2 {
-    margin-top: 0.2rem;
+    margin-top: 0.4rem;
     font-family: var(--font-display);
     font-size: clamp(2.8rem, 8vw, 6rem);
     font-weight: 400;
-    line-height: 1.02;
+    line-height: 1.15;
     letter-spacing: 0.01em;
     text-transform: uppercase;
 }
@@ -590,88 +590,130 @@ a {
     }
 }
 
-/* ---------- Projets ---------- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
+/* ---------- Projets : carte des combats ---------- */
+.bout-label {
+    font-family: var(--font-label);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
 }
 
-.project-card {
+.bout h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.bout-tech {
     display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    text-align: left;
-    background: rgba(23, 20, 15, 0.02);
-    border: 1px solid rgba(23, 20, 15, 0.07);
-    border-radius: 16px;
-    transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
-}
-
-.project-card:hover {
-    border-color: rgba(23, 20, 15, 0.35);
-    background: rgba(23, 20, 15, 0.03);
-    transform: translateY(-4px);
-}
-
-.project-meta {
-    font-size: 0.72rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    list-style: none;
+    font-family: var(--font-label);
+    font-size: 1.1rem;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--ink-soft);
 }
 
-.project-card h3 {
-    margin: 0.6rem 0 0.7rem;
+.bout-tech li + li::before {
+    content: '·';
+    margin: 0 0.6rem;
+}
+
+/* Combat principal */
+.bout-main {
+    padding: clamp(1.5rem, 4vw, 3rem);
+    color: var(--paper);
+    background-color: var(--ink);
+}
+
+.bout-main h3 {
+    margin-top: 0.3rem;
+    font-size: clamp(4rem, 15vw, 11rem);
+    line-height: 0.95;
+}
+
+.bout-info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem 3rem;
+    align-items: end;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--paper);
+}
+
+.bout-main .bout-desc {
+    max-width: 40ch;
     font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--ink);
 }
 
-.project-card p {
-    flex: 1;
-    font-size: 0.97rem;
+.bout-main .bout-tech {
+    grid-column: 1;
+}
+
+.bout-link {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-label);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    background-color: var(--paper);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.bout-link:hover {
+    color: var(--paper);
+    background-color: var(--red);
+}
+
+.bout-main :focus-visible {
+    outline-color: var(--paper);
+}
+
+/* Sous-carte */
+.undercard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.undercard .bout {
+    padding-top: 1.2rem;
+    border-top: 2px solid var(--ink);
+}
+
+.undercard h3 {
+    margin: 0.4rem 0 0.8rem;
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+}
+
+.undercard .bout-desc {
+    max-width: 44ch;
     color: var(--ink-soft);
 }
 
-.project-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1.6rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid rgba(23, 20, 15, 0.06);
-}
+@media (max-width: 800px) {
+    .bout-info,
+    .undercard {
+        grid-template-columns: 1fr;
+    }
 
-.tech-tags {
-    display: flex;
-    gap: 0.45rem;
-    flex-wrap: wrap;
-}
-
-.tech-tags span {
-    padding: 0.2rem 0.6rem;
-    font-family: var(--font-label);
-    font-size: 0.72rem;
-    color: var(--red);
-    background: rgba(23, 20, 15, 0.06);
-    border-radius: 6px;
-}
-
-.project-link {
-    flex-shrink: 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--ink);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.project-link:hover {
-    color: var(--red);
+    .bout-link {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 1rem;
+        text-align: center;
+    }
 }
 
 /* ---------- Contact ---------- */
