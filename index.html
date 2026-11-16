@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <header id="header">
+    <header class="site-header" id="header">
         <a href="#accueil" class="logo" aria-label="Retour à l'accueil">
             <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
                 <rect width="64" height="64" fill="#c8201c"/>
@@ -95,28 +95,48 @@
             </div>
         </section>
 
-        <section id="parcours" class="section education-section">
+        <section id="parcours" class="section">
             <header class="section-head">
-                <h2>Mon Parcours</h2>
+                <p class="kicker">Parcours</p>
+                <h2>Surcharge progressive</h2>
+                <p class="lead">Comme à la salle : on ajoute du poids sur la barre à chaque étape.</p>
             </header>
 
-            <ul class="timeline">
-                <li class="timeline-item">
-                    <span class="timeline-date mono">2023 — auj.</span>
-                    <div class="timeline-body">
-                        <h3>BUT Informatique · 3<sup>e</sup> année</h3>
-                        <p class="timeline-place">IUT de Reims-Châlons-Charleville</p>
-                        <p class="timeline-desc">Parcours A : Réalisation d'applications (conception, développement, validation).</p>
-                    </div>
-                </li>
-                <li class="timeline-item">
-                    <span class="timeline-date mono">2023</span>
-                    <div class="timeline-body">
+            <ol class="lifts">
+                <li class="lift">
+                    <p class="lift-date">2023</p>
+                    <svg class="lift-bar" viewBox="0 0 200 56" aria-hidden="true">
+                        <rect x="6" y="26" width="188" height="4"/>
+                        <rect x="60" y="21" width="4" height="14"/>
+                        <rect x="136" y="21" width="4" height="14"/>
+                        <rect class="plate-red" x="50" y="4" width="9" height="48" rx="1.5"/>
+                        <rect class="plate-red" x="141" y="4" width="9" height="48" rx="1.5"/>
+                    </svg>
+                    <div class="lift-body">
                         <h3>Baccalauréat STI2D</h3>
-                        <p class="timeline-place">Lycée Roosevelt, Reims</p>
+                        <p class="lift-place">Lycée Roosevelt, Reims</p>
                     </div>
                 </li>
-            </ul>
+                <li class="lift">
+                    <p class="lift-date">2023 — aujourd'hui</p>
+                    <svg class="lift-bar" viewBox="0 0 200 56" aria-hidden="true">
+                        <rect x="6" y="26" width="188" height="4"/>
+                        <rect x="60" y="21" width="4" height="14"/>
+                        <rect x="136" y="21" width="4" height="14"/>
+                        <rect class="plate-red" x="50" y="4" width="9" height="48" rx="1.5"/>
+                        <rect class="plate-red" x="141" y="4" width="9" height="48" rx="1.5"/>
+                        <rect x="39" y="8" width="9" height="40" rx="1.5"/>
+                        <rect x="152" y="8" width="9" height="40" rx="1.5"/>
+                        <rect x="28" y="13" width="9" height="30" rx="1.5"/>
+                        <rect x="163" y="13" width="9" height="30" rx="1.5"/>
+                    </svg>
+                    <div class="lift-body">
+                        <h3>BUT Informatique · 3<sup>e</sup> année</h3>
+                        <p class="lift-place">IUT de Reims-Châlons-Charleville</p>
+                        <p class="lift-desc">Parcours A : Réalisation d'applications (conception, développement, validation).</p>
+                    </div>
+                </li>
+            </ol>
         </section>
 
         <section id="competences" class="section skills-section">
@@ -230,7 +250,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <img src="logo.svg" alt="" class="footer-logo" width="36" height="36">
         <p>&copy; 2026 AGBE Simisola. Tous droits réservés.</p>
     </footer>
