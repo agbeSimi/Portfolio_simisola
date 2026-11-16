@@ -3,6 +3,7 @@
     --ink: #17140f;
     --ink-soft: #5b5447;
     --red: #c8201c;
+    --red-dark: #a31915;
     --blue: #1d4f91;
     --pitch: #2f7d4a;
     --pitch-dark: #2a7143;
@@ -284,15 +285,70 @@ a {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: clamp(2rem, 5vw, 4.5rem);
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr) 9.5rem minmax(0, 0.85fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "desc    gloves fiche"
+        "actions gloves fiche";
+    column-gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .hero-desc {
+    grid-area: desc;
     max-width: 34ch;
     font-size: 1.3rem;
     line-height: 1.45;
+}
+
+.hero-actions {
+    grid-area: actions;
+}
+
+/* Gants suspendus : le haut du dessin remonte jusqu'à la corde rouge, où les lacets sont noués */
+.gloves {
+    grid-area: gloves;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: calc(-2.4rem - 38px);
+}
+
+.glove-red {
+    fill: var(--red);
+}
+
+.glove-dark {
+    fill: var(--red-dark);
+}
+
+.glove-band {
+    fill: var(--paper);
+}
+
+.glove-seam,
+.glove-shine,
+.glove-lace {
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+.glove-seam {
+    stroke: var(--red-dark);
+}
+
+.glove-shine {
+    stroke: var(--paper);
+    stroke-width: 3;
+    opacity: 0.6;
+}
+
+.glove-lace {
+    stroke: var(--ink);
+}
+
+.glove-knot {
+    fill: var(--ink);
 }
 
 .hero-goal {
@@ -316,6 +372,8 @@ a {
 }
 
 .fiche {
+    grid-area: fiche;
+    align-self: start;
     border: 2px solid var(--ink);
 }
 
@@ -364,16 +422,34 @@ a {
         display: block;
     }
 
-    .hero-grid {
-        grid-template-columns: 1fr;
-    }
-
     .hero-buttons .btn {
         flex: 1 1 100%;
     }
 
     .fiche-row {
         grid-template-columns: 7.5rem 1fr;
+    }
+}
+
+/* Sous 1000px, la fiche passe sous le texte ; les gants restent accrochés à droite */
+@media (max-width: 1000px) {
+    .hero-grid {
+        grid-template-columns: minmax(0, 1fr) 8rem;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "desc    gloves"
+            "actions actions"
+            "fiche   fiche";
+    }
+
+    .fiche {
+        margin-top: 2.2rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-grid {
+        grid-template-columns: minmax(0, 1fr) 7rem;
     }
 }
 
