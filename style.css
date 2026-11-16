@@ -168,12 +168,16 @@ a {
         display: block;
     }
 
-    .menu-toggle.active .bar:first-child {
-        transform: translateY(4.5px) rotate(45deg);
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
     }
 
-    .menu-toggle.active .bar:last-child {
-        transform: translateY(-4.5px) rotate(-45deg);
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
     .nav-links {
