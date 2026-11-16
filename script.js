@@ -22,12 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.key === 'Escape') setMenu(false);
     });
 
-    /* ---------- En-tête et bouton retour en haut ---------- */
-    const header = document.querySelector('#header');
+    /* ---------- Bouton retour en haut ---------- */
     const backToTop = document.querySelector('#backToTop');
 
     function onScroll() {
-        header.classList.toggle('scrolled', window.scrollY > 30);
         backToTop.classList.toggle('show', window.scrollY > 300);
     }
 
