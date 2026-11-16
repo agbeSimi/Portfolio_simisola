@@ -705,6 +705,45 @@ a {
     background-color: var(--ink);
 }
 
+/* Les joueurs prennent place ligne par ligne, du gardien aux attaquants */
+@media (prefers-reduced-motion: no-preference) {
+    .js .player {
+        opacity: 0;
+        transform: scale(0.4);
+        transition: transform 0.35s cubic-bezier(0.3, 1.4, 0.5, 1), opacity 0.2s linear;
+        transition-delay: calc((var(--line, 0) + var(--place, 0)) * 60ms);
+    }
+
+    .js .pitch-row:nth-child(3) {
+        --line: 1;
+    }
+
+    .js .pitch-row:nth-child(2) {
+        --line: 4;
+    }
+
+    .js .pitch-row:nth-child(1) {
+        --line: 8;
+    }
+
+    .js .player:nth-child(2) {
+        --place: 1;
+    }
+
+    .js .player:nth-child(3) {
+        --place: 2;
+    }
+
+    .js .player:nth-child(4) {
+        --place: 3;
+    }
+
+    .js .pitch.is-inview .player {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 .teamsheet-title {
     padding-bottom: 0.6rem;
     font-family: var(--font-label);

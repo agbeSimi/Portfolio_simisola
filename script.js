@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.5 });
 
-    document.querySelectorAll('.lift').forEach(element => inViewObserver.observe(element));
+    document.querySelectorAll('.lift, .pitch').forEach(element => inViewObserver.observe(element));
 
     /* ---------- Gants : un petit balancement quand on les touche ---------- */
     const gloves = document.querySelector('.gloves');
