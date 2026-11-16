@@ -727,11 +727,72 @@ a {
     margin: 0 0.6rem;
 }
 
-/* Combat principal */
+/* Combat principal : un ring vu de dessus */
 .bout-main {
-    padding: clamp(1.5rem, 4vw, 3rem);
+    position: relative;
+    padding: clamp(3.5rem, 6vw, 4.8rem);
     color: var(--paper);
     background-color: var(--ink);
+    /* Les trois cordes qui font le tour du ring */
+    box-shadow:
+        inset 0 0 0 12px var(--ink),
+        inset 0 0 0 15px var(--red),
+        inset 0 0 0 22px var(--ink),
+        inset 0 0 0 24px var(--paper),
+        inset 0 0 0 31px var(--ink),
+        inset 0 0 0 33px var(--paper);
+}
+
+/* Protections de coin, en travers des cordes, côté intérieur du ring */
+.ring-pad {
+    --post-offset: -31px;
+    position: absolute;
+    width: 52px;
+    height: 16px;
+    background-color: var(--paper);
+    border-radius: 3px;
+}
+
+/* Poteau de coin, là où les cordes se rejoignent */
+.ring-pad::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    background-color: var(--paper);
+    border-radius: 50%;
+    transform: translateY(var(--post-offset));
+}
+
+.ring-pad.is-red {
+    top: 36px;
+    left: 18px;
+    background-color: var(--red);
+    transform: rotate(-45deg);
+}
+
+.ring-pad.is-neutral-top {
+    top: 36px;
+    right: 18px;
+    transform: rotate(45deg);
+}
+
+.ring-pad.is-blue {
+    --post-offset: 31px;
+    right: 18px;
+    bottom: 36px;
+    background-color: var(--blue);
+    transform: rotate(-45deg);
+}
+
+.ring-pad.is-neutral-bottom {
+    --post-offset: 31px;
+    bottom: 36px;
+    left: 18px;
+    transform: rotate(45deg);
 }
 
 .bout-main h3 {
@@ -816,7 +877,9 @@ a {
         grid-column: 1;
         grid-row: auto;
         margin-top: 1rem;
+        padding-inline: 0.5rem;
         text-align: center;
+        white-space: nowrap;
     }
 }
 
