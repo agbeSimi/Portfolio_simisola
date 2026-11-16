@@ -3,6 +3,7 @@
     --ink: #17140f;
     --ink-soft: #5b5447;
     --red: #c8201c;
+    --blue: #1d4f91;
     --pitch: #2f7d4a;
     --pitch-dark: #2a7143;
     --rule: rgba(23, 20, 15, 0.2);
@@ -244,18 +245,41 @@ a {
     color: var(--red);
 }
 
-/* Les trois cordes du ring */
+/* Les trois cordes du ring, tendues entre le coin rouge et le coin bleu */
 .ropes {
-    height: 26px;
-    margin: 1.4rem 0 2.4rem;
+    position: relative;
+    height: 36px;
+    margin: 1.9rem 0 2.4rem;
     background: linear-gradient(
         to bottom,
         var(--red) 0 4px,
-        transparent 4px 11px,
-        var(--ink) 11px 15px,
-        transparent 15px 22px,
-        var(--ink) 22px 26px
+        transparent 4px 16px,
+        var(--ink) 16px 20px,
+        transparent 20px 32px,
+        var(--ink) 32px 36px
     );
+}
+
+/* Poteaux de coin et leur protection */
+.ropes::before,
+.ropes::after {
+    content: '';
+    position: absolute;
+    top: -14px;
+    width: 18px;
+    height: 64px;
+    border-top: 5px solid var(--ink);
+    border-radius: 3px;
+}
+
+.ropes::before {
+    left: 0;
+    background-color: var(--red);
+}
+
+.ropes::after {
+    right: 0;
+    background-color: var(--blue);
 }
 
 .hero-grid {
