@@ -46,6 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => sectionObserver.observe(section));
 
+    /* ---------- Gants : un petit balancement quand on les touche ---------- */
+    const gloves = document.querySelector('.gloves');
+
+    gloves.addEventListener('pointerenter', () => gloves.classList.add('is-nudged'));
+
+    gloves.addEventListener('animationend', event => {
+        if (event.target === gloves) gloves.classList.remove('is-nudged');
+    });
+
     /* ---------- Copie de l'email et du téléphone ---------- */
     document.querySelectorAll('.copy-btn').forEach(button => {
         const label = button.textContent;

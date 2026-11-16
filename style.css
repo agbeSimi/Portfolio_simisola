@@ -351,6 +351,40 @@ a {
     fill: var(--ink);
 }
 
+/* Les gants se balancent autour du noeud : une fois à l'arrivée sur la page, puis quand on les touche */
+@media (prefers-reduced-motion: no-preference) {
+    .gloves-pair {
+        transform-origin: 85px 5px;
+        animation: glove-swing 2.8s ease-in-out 0.3s backwards;
+    }
+
+    .gloves {
+        transform-origin: 50% 2.5%;
+    }
+
+    .gloves.is-nudged {
+        animation: glove-nudge 2s ease-in-out;
+    }
+}
+
+@keyframes glove-swing {
+    0% { transform: rotate(10deg); }
+    18% { transform: rotate(-7deg); }
+    36% { transform: rotate(4.5deg); }
+    54% { transform: rotate(-2.5deg); }
+    72% { transform: rotate(1.2deg); }
+    100% { transform: rotate(0); }
+}
+
+@keyframes glove-nudge {
+    0% { transform: rotate(0); }
+    15% { transform: rotate(7deg); }
+    35% { transform: rotate(-5deg); }
+    55% { transform: rotate(3deg); }
+    75% { transform: rotate(-1.5deg); }
+    100% { transform: rotate(0); }
+}
+
 .hero-goal {
     display: inline-block;
     margin-top: 1.3rem;
