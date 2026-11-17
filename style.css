@@ -130,21 +130,34 @@ a {
 }
 
 .nav-links a {
+    position: relative;
     display: block;
-    padding: 0.35rem 0;
+    padding: 0.35rem 0 calc(0.35rem + 3px);
     font-family: var(--font-label);
     font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none;
-    border-bottom: 3px solid transparent;
-    transition: border-color 0.15s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    border-bottom-color: var(--red);
+/* Soulignement rouge qui se déroule depuis la gauche */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
 }
 
 .menu-toggle {
@@ -207,7 +220,10 @@ a {
         letter-spacing: 0.02em;
         line-height: 1.2;
         color: var(--paper);
-        border-bottom: none;
+    }
+
+    .nav-links a::after {
+        display: none;
     }
 
     .nav-links a.active {
